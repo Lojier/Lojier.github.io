@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /><!-- 适应手机 -->
+		<style>
+			.body {
+							text-align: center;
+							background-color: #ffffff;
+						}
+						
+						#search_input {
+							width: 90%;
+							height: 40px;
+							background-color: transparent;
+							border: none;
+							outline: 0;
+							font-size: 18px;
+							color: #426ab3;
+							padding: 0 20px;
+							border-radius: 50px
+						}
+						
+						.search_part {
+							margin-bottom: 30px;
+							margin-top: 20px;
+						}
+						
+						.footer {
+							left: 0px;
+							position: fixed;
+							width: 100%;
+							height: 100px;
+							background-color: #272822;
+							color: #FFF;
+							text-align: left;
+							font-size: 18px;
+							font-weight: bold;
+							bottom: 0px;
+						}
+						
+						.search_bar {
+							box-shadow: 0 0 18px rgba(70, 70, 40, .255);
+							-webkit-animation: fadeIn 2.5s;
+							animation: fadeIn 2.5s;
+							background-color: rgba(255, 255, 255, .100);
+							border-radius: 50px;
+							display: table;
+							vertical-align: middle;
+							width: 80%;
+							height: 40px;
+							max-width: 400px;
+							margin: 10px auto;
+						}
+						
+						
+						
+						#content {
+							width: 100%;
+							text-align: center;
+							padding-top: 15px;
+							padding-bottom: 15px;
+						}
+						
+						.code {
+							border-right: 2px solid;
+							font-size: 26px;
+							padding: 0 15px 0 15px;
+							text-align: center;
+						}
+		</style>
+		<title>bright</title>
+	</head>
+	<body>
+		<div id="content">
+			<p id="hitokoto" class="code"></p>
+			<br />
+			<div class="search_part">
+				<form onsubmit="return search()" class="search_bar" span><input class="search" type="text" value="" autocomplete="off"
+					 id="search_input"></span>
+				</form>
+			</div>
+			<br />
+		</div>
+		<div class="footer" style="padding: 10px;">搜索引擎：百度<br />版本号：v1.0.1<br />
+			©2020 by <a href="https://github.com/Lojier/" target="_blank" style="color: antiquewhite;">lojier</a> . All rights
+			reserved.
+		</div>
+		<script type="text/javascript">
+			function search() {
+				if (document.getElementById("search_input").value != "") {
+					window.location.href = "https://www.baidu.com/s?word=" + document.getElementById("search_input").value;
+					document.getElementById("search_input").value = "";
+				}
+				return false;
+			}
+		</script>
+		<!-- hitokoto.cn   api引用 -->
+		<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+	</body>
+</html>
